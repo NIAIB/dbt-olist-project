@@ -1,0 +1,20 @@
+name: gcp_dbt_project        # Name of your dbt project (lowercase, no spaces)
+version: 1.0.0               # Project version (just for tracking)
+config-version: 2            # Required dbt config file format
+
+# The profile name MUST match one in your ~/.dbt/profiles.yml
+profile: gcp_dbt_project
+
+# Where your models (SQL files) are stored
+model-paths: ["models"]
+
+# Optional: folders for other dbt resources
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+
+# Default settings for models in this project
+models:
+  gcp_dbt_project:
+    +materialized: view  # How dbt should build models by default
+
