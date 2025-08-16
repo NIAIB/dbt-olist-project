@@ -1,0 +1,12 @@
+sources:
+  - name: raw_olist
+    database: sinuous-network-468812-j8
+    schema: raw_olist
+    tables:
+      - name: orders
+        loaded_at_field: order_purchase_timestamp
+        freshness:
+          warn_after: {count: 3650, period: day}  # 10 years
+          error_after: {count: 9999, period: day} # effectively off
+
+

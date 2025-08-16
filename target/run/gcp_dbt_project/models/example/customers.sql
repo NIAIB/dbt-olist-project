@@ -1,6 +1,6 @@
 
 
-  create or replace view `sinuous-network-468812-j8`.`transformed_dbt_dataset`.`customers`
+  create or replace view `sinuous-network-468812-j8`.`transformed_dbt_dataset_transformed_dbt_dataset`.`customers`
   OPTIONS()
   as -- models/example/customers.sql
 WITH raw_customers AS (

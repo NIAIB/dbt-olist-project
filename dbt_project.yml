@@ -1,20 +1,33 @@
-name: gcp_dbt_project        # Name of your dbt project (lowercase, no spaces)
-version: 1.0.0               # Project version (just for tracking)
-config-version: 2            # Required dbt config file format
+name: gcp_dbt_project
+version: '1.0'
+config-version: 2
 
-# The profile name MUST match one in your ~/.dbt/profiles.yml
-profile: gcp_dbt_project
+# MUST match the profile name in ~/.dbt/profiles.yml
+profile: 'gcp_dbt_project'
 
-# Where your models (SQL files) are stored
+# Project paths
 model-paths: ["models"]
-
-# Optional: folders for other dbt resources
 seed-paths: ["seeds"]
+analysis-paths: ["analysis"]
 test-paths: ["tests"]
 macro-paths: ["macros"]
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_modules"
 
-# Default settings for models in this project
+# Variables used in your SQL (we referenced this in staging models)
+vars:
+  project_id: "sinuous-network-468812-j8"
+
+# Model configs
 models:
   gcp_dbt_project:
-    +materialized: view  # How dbt should build models by default
+    +materialized: table
+    staging:
+      +schema: transformed_dbt_dataset
+    marts:
+      +schema: transformed_dbt_dataset
+
+
 
