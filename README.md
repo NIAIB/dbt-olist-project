@@ -22,10 +22,6 @@ This project demonstrates a **modern data engineering workflow** using **dbt** o
 ├── .gitignore # ignored files for clean repo
 └── README.md # project documentation
 
-yaml
-Copy
-Edit
-
 ---
 
 ## 🧪 Data Tests
@@ -45,7 +41,6 @@ pip install dbt-bigquery
 Configure dbt profile (~/.dbt/profiles.yml) with your GCP project ID, dataset, and location.
 
 Run dbt:
-
 dbt run
 dbt test
 
