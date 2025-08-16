@@ -1,0 +1,30 @@
+# Ignore Python cache and virtual envs
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+env/
+venv/
+ENV/
+
+# Ignore dbt build artifacts
+target/
+dbt_modules/
+logs/
+manifest.json
+run_results.json
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore local configs (like profiles.yml)
+# profiles.yml lives in ~/.dbt/ by default, so it won't be here
+# but just in case, keep it ignored
+profiles.yml
+
+# Ignore secrets
+*.key
+*.json
+
